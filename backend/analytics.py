@@ -5,12 +5,12 @@ from sqlalchemy import and_, func
 from sqlalchemy.orm import Session
 
 import models
-from database import get_db
+from database import get_db, month_of
 
 router = APIRouter(prefix="/analytics", tags=["analytics"])
 
 T = models.Transaction
-month_col = func.strftime("%Y-%m", T.date)
+month_col = month_of(T.date)
 MONTH_PATTERN = r"^\d{4}-\d{2}$"
 
 

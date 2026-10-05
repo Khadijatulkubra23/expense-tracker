@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 
 import models
 import schemas
-from database import get_db
+from database import get_db, month_of
 
 router = APIRouter(prefix="/budgets", tags=["budgets"])
 
@@ -19,7 +19,7 @@ def list_budgets(month: Optional[str] = Query(None, pattern=MONTH_PATTERN), db: 
     month = month or datetime.date.today().strftime("%Y-%m")
     spent = dict(
         db.query(T.category, func.sum(T.amount))
-        .filter(T.type == "expense", func.strftime("%Y-%m", T.date) == month)
+                .filter(T.type == "expense", month_of(T.date) == month)
         .group_by(T.category)
         .all()
     )
