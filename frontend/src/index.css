@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --scheme: light;
+  --bg: #f5ede3;
+  --card: rgba(255, 252, 247, 0.8);
+  --line: rgba(92, 64, 51, 0.12);
+  --tx: #3e2c23;
+  --mu: #8c7466;
+  --teal: #5e8c6a;
+  --violet: #a47551;
+  --rose: #c0614b;
+  --green: #6b9a74;
+  --amber: #d9a441;
+  --glow1: rgba(164, 117, 81, 0.25);
+  --glow2: rgba(217, 164, 65, 0.18);
+  --hero: linear-gradient(135deg, #7b5236, #c08a5d);
+}
+
+[data-theme="dark"] {
+  --scheme: dark;
+  --bg: #1f1611;
+  --card: rgba(255, 244, 232, 0.06);
+  --line: rgba(255, 235, 215, 0.1);
+  --tx: #f3e9df;
+  --mu: #b49c8b;
+  --teal: #8fc29b;
+  --violet: #d4a373;
+  --rose: #e58a74;
+  --glow1: rgba(212, 163, 115, 0.22);
+  --glow2: rgba(217, 164, 65, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--tx);
+  background-color: var(--bg);
+  background-image: radial-gradient(600px 400px at 85% -5%, var(--glow1), transparent),
+    radial-gradient(500px 400px at -5% 40%, var(--glow2), transparent);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 22px 18px 40px;
+}
+
+.error {
+  color: var(--rose);
+}
