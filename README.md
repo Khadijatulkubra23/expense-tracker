@@ -15,7 +15,6 @@ A full-stack expense tracker with an analytics dashboard. Track income and expen
 - CSV export, and CSV import with row validation and preview
 - Light and dark themes, responsive layout down to mobile
 
-![Heatmap and budgets](docs/screenshots/heatmap.png)
 
 ## Tech Stack
 
